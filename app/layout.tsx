@@ -1,3 +1,4 @@
+import { ThemeProvider } from "@/components/theme-provider"
 import type { Metadata, Viewport } from 'next'
 import { Inter, Playfair_Display } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
@@ -47,11 +48,13 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="pt-BR" className={`${_inter.variable} ${_playfair.variable}`}>
-      <body className="font-sans antialiased">
-        {children}
-        <Analytics />
-      </body>
-    </html>
+    <html lang="pt-BR" suppressHydrationWarning>
+  <body>
+    <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+      {children}
+    </ThemeProvider>
+    <Analytics />
+  </body>
+</html>
   )
 }
