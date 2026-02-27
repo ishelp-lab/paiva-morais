@@ -1,5 +1,6 @@
 "use client"
 
+import { ThemeToggle } from "@/components/theme-toggle"
 import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -53,6 +54,7 @@ export function Navbar() {
           >
             <a href="#cadastro">Quero ser revendedora</a>
           </Button>
+          <ThemeToggle />
         </div>
 
         {/* Mobile hamburger */}
@@ -69,6 +71,7 @@ export function Navbar() {
       {mobileOpen && (
         <div className="md:hidden bg-background/95 backdrop-blur-md border-b border-border px-6 pb-6">
           <div className="flex flex-col gap-4">
+            <ThemeToggle />
             {navLinks.map((link) => (
               <a
                 key={link.href}
