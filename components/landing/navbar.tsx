@@ -54,9 +54,8 @@ export function Navbar() {
           >
             <a href="#cadastro">Quero ser revendedora</a>
           </Button>
-          <ThemeToggle />
         </div>
-
+<ThemeToggle />
         {/* Mobile hamburger */}
         <button
           className="md:hidden text-foreground"
@@ -71,7 +70,6 @@ export function Navbar() {
       {mobileOpen && (
         <div className="md:hidden bg-background/95 backdrop-blur-md border-b border-border px-6 pb-6">
           <div className="flex flex-col gap-4">
-            <ThemeToggle />
             {navLinks.map((link) => (
               <a
                 key={link.href}
