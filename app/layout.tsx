@@ -15,17 +15,17 @@ const _playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: 'Paiva Morais Semijoias | Seja uma Revendedora',
+  title: 'Revendedora | Paiva Morais',
   description: 'Ganhe dinheiro revendendo semijoias Paiva Morais. Sem investimento inicial, com suporte completo e lucro garantido. Cadastre-se agora!',
-  generator: 'v0.app',
+  generator: 'Fhelipe Abel',
   icons: {
     icon: [
       {
-        url: '/favicon-light.ico',
+        url: 'share-img.jpg',
         media: '(prefers-color-scheme: light)',
       },
       {
-        url: '/favicon-dark.ico',
+        url: 'share-img.jpg',
         media: '(prefers-color-scheme: dark)',
       },
     ],
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: '#C8A96E',
+  themeColor: '#08BBB7',
   userScalable: true,
 }
 

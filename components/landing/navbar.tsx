@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
@@ -32,9 +33,14 @@ export function Navbar() {
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <a href="#" className="flex items-center gap-2">
-          <span className="font-serif text-2xl font-bold tracking-tight text-foreground">
-            Paiva Morais
-          </span>
+          <Image
+            src="/logo-paiva-morais.png"
+            alt="Paiva Morais Semijoias"
+            width={160}
+            height={40}
+            priority
+            className="h-11 w-auto"
+          />
         </a>
 
         {/* Desktop nav */}
