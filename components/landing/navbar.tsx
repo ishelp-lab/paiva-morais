@@ -54,16 +54,20 @@ export function Navbar() {
           >
             <a href="#cadastro">Quero ser revendedora</a>
           </Button>
+          <ThemeToggle />
         </div>
-<ThemeToggle />
-        {/* Mobile hamburger */}
-        <button
-          className="md:hidden text-foreground"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label={mobileOpen ? "Fechar menu" : "Abrir menu"}
-        >
-          {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+
+        {/* Mobile controls: theme toggle + hamburger */}
+<div className="flex items-center gap-2 md:hidden">
+  <ThemeToggle />
+  <button
+    className="text-foreground"
+    onClick={() => setMobileOpen(!mobileOpen)}
+    aria-label={mobileOpen ? "Fechar menu" : "Abrir menu"}
+  >
+    {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+  </button>
+</div>
       </nav>
 
       {/* Mobile menu */}
