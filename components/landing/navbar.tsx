@@ -1,5 +1,6 @@
 "use client"
 
+import { useTheme } from "next-themes"
 import Image from "next/image"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { useState, useEffect } from "react"
@@ -16,12 +17,35 @@ const navLinks = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const { resolvedTheme } = useTheme()
+const [mounted, setMounted] = useState(false)
+
+useEffect(() => setMounted(true), [])
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
+
+  const isDark = mounted && resolvedTheme === "dark"
+
+// Quando NÃO está scrolled:
+// - light theme: texto claro (branco) sobre o hero
+// - dark theme: texto escuro (preto) sobre o hero (como você pediu)
+const topLinkClass = isDark
+  ? "text-black/90 hover:text-black"
+  : "text-white/90 hover:text-white"
+
+const topBrandClass = isDark ? "text-black" : "text-white"
+
+const desktopLinkClass = scrolled
+  ? "text-foreground hover:text-foreground"
+  : topLinkClass
+
+const brandTextClass = scrolled ? "text-foreground" : topBrandClass
+
+const mobileTopControlsClass = scrolled ? "text-foreground" : topBrandClass
 
   return (
     <header
@@ -32,7 +56,7 @@ export function Navbar() {
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <a href="#" className="flex items-center gap-2">
+        <a href="#" className="flex items-center gap-3">
           <Image
             src="/logo-paiva-morais.png"
             alt="Paiva Morais Semijoias"
@@ -41,6 +65,12 @@ export function Navbar() {
             priority
             className="h-11 w-auto"
           />
+          <span
+            style={{ fontFamily: "var(--font-brand)" }}
+            className={`text-lg font-semibold tracking-wide ${brandTextClass}`}
+          >
+            Paiva Morais
+          </span>
         </a>
 
         {/* Desktop nav */}
@@ -49,31 +79,33 @@ export function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              className={`text-sm font-medium transition-colors ${desktopLinkClass}`}
             >
               {link.label}
             </a>
           ))}
+
           <Button
             asChild
             className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-6"
           >
             <a href="#cadastro">Quero ser revendedora</a>
           </Button>
+
           <ThemeToggle />
         </div>
 
         {/* Mobile controls: theme toggle + hamburger */}
-<div className="flex items-center gap-2 md:hidden">
-  <ThemeToggle />
-  <button
-    className="text-foreground"
-    onClick={() => setMobileOpen(!mobileOpen)}
-    aria-label={mobileOpen ? "Fechar menu" : "Abrir menu"}
-  >
-    {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-  </button>
-</div>
+        <div className="flex items-center gap-2 md:hidden">
+          <ThemeToggle />
+          <button
+            className={mobileTopControlsClass}
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label={mobileOpen ? "Fechar menu" : "Abrir menu"}
+          >
+            {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
       </nav>
 
       {/* Mobile menu */}
