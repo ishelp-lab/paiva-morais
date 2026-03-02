@@ -49,7 +49,7 @@ export function HeroSection() {
       </div>
     </div>
 
-    <p className="mt-6 text-lg leading-relaxed text-card/80 md:text-xl max-w-lg mx-auto md:mx-0 text-center md:text-left">
+    <p className="mt-6 text-lg leading-relaxed text-card/80 md:text-xl max-w-lg mx-auto md:mx-0 text-center md:text-left">  
       Comece sem investir nada. Receba as pecas em consignacao e pague
       apenas pelo que vender. Simples assim.
     </p>
