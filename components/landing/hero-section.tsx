@@ -37,7 +37,7 @@ export function HeroSection() {
     {/* VÍDEO MOBILE (aparece só no mobile) */}
     <div className="mt-8 md:hidden">
       <div className="overflow-hidden rounded-2xl border border-card/15 bg-black/30 shadow-lg">
-        <div className="aspect-[9/16] w-full">
+        <div className="aspect-[1/1] w-full">
           <video
             className="h-full w-full object-cover"
             src="/videos/vsl-mobile.mp4"
@@ -77,7 +77,7 @@ export function HeroSection() {
   {/* COLUNA DIREITA (vídeo desktop) */}
   <div className="hidden md:block">
     <div className="overflow-hidden rounded-2xl border border-card/15 bg-black/30 shadow-lg">
-      <div className="aspect-video w-full">
+      <div className="aspect-[1/1] w-full">
         <video
           className="h-full w-full object-cover"
           src="/videos/vsl-desktop.mp4"
