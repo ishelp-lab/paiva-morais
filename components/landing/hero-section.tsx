@@ -22,7 +22,7 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-foreground/60" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 py-32 md:py-40 w-full">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 py-32 md:py-23 w-full">
         <div className="grid gap-10 md:grid-cols-2 md:items-center md:gap-12">
   {/* COLUNA ESQUERDA (texto) */}
   <div>
@@ -30,9 +30,9 @@ export function HeroSection() {
       Oportunidade exclusiva
     </span>
 
-    <h1 className="font-serif text-4xl font-bold leading-tight tracking-tight text-card sm:text-5xl md:text-6xl lg:text-7xl text-balance">
-      Ganhe dinheiro revendendo semijoias de alta qualidade
-    </h1>
+    <h1 className="font-serif text-3xl font-bold leading-tight tracking-tight text-card text-center md:text-left sm:text-4xl md:text-5xl lg:text-6xl text-balance">
+  Ganhe dinheiro revendendo semijoias de alta qualidade
+</h1>
 
     {/* VÍDEO MOBILE (aparece só no mobile) */}
     <div className="mt-8 md:hidden">
@@ -49,7 +49,7 @@ export function HeroSection() {
       </div>
     </div>
 
-    <p className="mt-6 text-lg leading-relaxed text-card/80 md:text-xl max-w-lg">
+    <p className="mt-6 text-lg leading-relaxed text-card/80 md:text-xl max-w-lg mx-auto md:mx-0 text-center md:text-left">
       Comece sem investir nada. Receba as pecas em consignacao e pague
       apenas pelo que vender. Simples assim.
     </p>
@@ -74,22 +74,23 @@ export function HeroSection() {
     </div>
   </div>
 
-  {/* COLUNA DIREITA (vídeo desktop) */}
-  <div className="hidden md:block">
-    <div className="overflow-hidden rounded-2xl border border-card/15 bg-black/30 shadow-lg">
-      <div className="aspect-[1/1] w-full">
-        <video
-          className="h-full w-full object-cover"
-          src="/videos/vsl-desktop.mp4"
-          controls
-          playsInline
-          preload="metadata"
-          poster="/images/vsl-poster.jpg"
-          muted
-        />
-      </div>
+{/* COLUNA DIREITA (vídeo desktop) */}
+<div className="hidden md:flex justify-center">
+  <div className="w-[90%] overflow-hidden rounded-2xl border border-card/15 bg-black/30 shadow-lg">
+    <div className="aspect-[1/1] w-full">
+      <video
+        className="h-full w-full object-cover"
+        src="/videos/vsl-desktop.mp4"
+        controls
+        playsInline
+        preload="metadata"
+        poster="/images/vsl-poster.jpg"
+        muted
+      />
     </div>
   </div>
+</div>
+
 </div>
       </div>
 
