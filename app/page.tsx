@@ -1,14 +1,7 @@
 import { Navbar } from "@/components/landing/navbar"
 import { HeroSection } from "@/components/landing/hero-section"
-import { BenefitsSection } from "@/components/landing/benefits-section"
-import { AudienceSection } from "@/components/landing/audience-section"
-import { StepsSection } from "@/components/landing/steps-section"
-import { ObjectionsSection } from "@/components/landing/objections-section"
-import { ProductsShowcase } from "@/components/landing/products-showcase"
-import { TestimonialsSection } from "@/components/landing/testimonials-section"
-import { SignupForm } from "@/components/landing/signup-form"
-import { FaqSection } from "@/components/landing/faq-section"
-import { FinalCta } from "@/components/landing/final-cta"
+import { HowItWorksSection } from "@/components/landing/how-it-works-section"
+import { ProofAndCTASection } from "@/components/landing/proof-and-cta-section"
 import { Footer } from "@/components/landing/footer"
 
 export default function Home() {
@@ -16,15 +9,8 @@ export default function Home() {
     <main>
       <Navbar />
       <HeroSection />
-      <BenefitsSection />
-      <AudienceSection />
-      <StepsSection />
-      <ObjectionsSection />
-      <ProductsShowcase />
-      <TestimonialsSection />
-      <SignupForm />
-      <FaqSection />
-      <FinalCta />
+      <HowItWorksSection />
+      <ProofAndCTASection />
       <Footer />
     </main>
   )

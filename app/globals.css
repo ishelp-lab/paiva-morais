@@ -39,6 +39,19 @@
   --sidebar-ring: #08BBB7;
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.03;
+  background-image: url("/images/noise.png");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  mix-blend-mode: soft-light;
+}
+
 .dark {
   --background: #1A1A1A;
   --foreground: #FAF8F5;

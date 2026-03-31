@@ -18,14 +18,14 @@ export function Footer() {
 
           <div className="flex items-center gap-6">
             <a
-              href="https://www.instagram.com/paivamoraissemijoias/"
+              href="https://www.instagram.com/paivamorais_semijoias/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-primary"
               aria-label="Instagram Paiva Morais"
             >
               <Instagram className="h-5 w-5" />
-              <span className="hidden sm:inline">@paivamoraissemijoias</span>
+              <span className="hidden sm:inline">@paivamorais_semijoias</span>
             </a>
             <a
               href="https://www.paivamoraissemijoias.com.br/"
