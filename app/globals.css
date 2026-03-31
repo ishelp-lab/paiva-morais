@@ -3,7 +3,44 @@
 
 @custom-variant dark (&:is(.dark *));
 
+
 :root {
+  --background: #1A1A1A;
+  --foreground: #FAF8F5;
+  --card: #262626;
+  --card-foreground: #FAF8F5;
+  --popover: #262626;
+  --popover-foreground: #FAF8F5;
+  --primary: #08BBB7;
+  --primary-foreground: #FFFFFF;
+  --secondary: #333333;
+  --secondary-foreground: #FAF8F5;
+  --muted: #333333;
+  --muted-foreground: #9A9A9A;
+  --accent: #08BBB7;
+  --accent-foreground: #1A1A1A;
+  --destructive: #DC2626;
+  --destructive-foreground: #DC2626;
+  --border: #333333;
+  --input: #333333;
+  --ring: #08BBB7;
+  --chart-1: #08BBB7;
+  --chart-2: #FAF8F5;
+  --chart-3: #9A9A9A;
+  --chart-4: #333333;
+  --chart-5: #262626;
+  --radius: 0.75rem;
+  --sidebar: #1A1A1A;
+  --sidebar-foreground: #FAF8F5;
+  --sidebar-primary: #08BBB7;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #333333;
+  --sidebar-accent-foreground: #FAF8F5;
+  --sidebar-border: #333333;
+  --sidebar-ring: #08BBB7;
+}
+
+.dark {
   --background: #FAF8F5;
   --foreground: #1A1A1A;
   --card: #FFFFFF;
@@ -36,41 +73,6 @@
   --sidebar-accent: #F5F0EB;
   --sidebar-accent-foreground: #1A1A1A;
   --sidebar-border: #E8E0D6;
-  --sidebar-ring: #08BBB7;
-}
-
-.dark {
-  --background: #1A1A1A;
-  --foreground: #FAF8F5;
-  --card: #262626;
-  --card-foreground: #FAF8F5;
-  --popover: #262626;
-  --popover-foreground: #FAF8F5;
-  --primary: #08BBB7;
-  --primary-foreground: #FFFFFF;
-  --secondary: #333333;
-  --secondary-foreground: #FAF8F5;
-  --muted: #333333;
-  --muted-foreground: #9A9A9A;
-  --accent: #08BBB7;
-  --accent-foreground: #1A1A1A;
-  --destructive: #DC2626;
-  --destructive-foreground: #DC2626;
-  --border: #333333;
-  --input: #333333;
-  --ring: #08BBB7;
-  --chart-1: #08BBB7;
-  --chart-2: #FAF8F5;
-  --chart-3: #9A9A9A;
-  --chart-4: #333333;
-  --chart-5: #262626;
-  --sidebar: #1A1A1A;
-  --sidebar-foreground: #FAF8F5;
-  --sidebar-primary: #08BBB7;
-  --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #333333;
-  --sidebar-accent-foreground: #FAF8F5;
-  --sidebar-border: #333333;
   --sidebar-ring: #08BBB7;
 }
 

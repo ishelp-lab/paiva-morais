@@ -2,7 +2,136 @@
 
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { ArrowDown, CheckCircle2, Sparkles, PlayCircle } from "lucide-react"
+import {
+  ArrowDown,
+  Sparkles,
+  PlayCircle,
+  Play,
+  Pause,
+  Volume2,
+  VolumeX,
+} from "lucide-react"
+import { useEffect, useRef, useState } from "react"
+
+type CustomVideoPlayerProps = {
+  src: string
+  poster: string
+  className?: string
+  mutedByDefault?: boolean
+}
+
+function CustomVideoPlayer({
+  src,
+  poster,
+  className = "",
+  mutedByDefault = false,
+}: CustomVideoPlayerProps) {
+  const videoRef = useRef<HTMLVideoElement | null>(null)
+  const [isPlaying, setIsPlaying] = useState(false)
+  const [isMuted, setIsMuted] = useState(mutedByDefault)
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+
+    video.muted = mutedByDefault
+    setIsMuted(mutedByDefault)
+
+    const handlePlay = () => setIsPlaying(true)
+    const handlePause = () => setIsPlaying(false)
+    const handleEnded = () => setIsPlaying(false)
+
+    video.addEventListener("play", handlePlay)
+    video.addEventListener("pause", handlePause)
+    video.addEventListener("ended", handleEnded)
+
+    return () => {
+      video.removeEventListener("play", handlePlay)
+      video.removeEventListener("pause", handlePause)
+      video.removeEventListener("ended", handleEnded)
+    }
+  }, [mutedByDefault])
+
+  const togglePlay = () => {
+    const video = videoRef.current
+    if (!video) return
+
+    if (video.paused) {
+      video.play()
+    } else {
+      video.pause()
+    }
+  }
+
+  const toggleMute = () => {
+    const video = videoRef.current
+    if (!video) return
+
+    video.muted = !video.muted
+    setIsMuted(video.muted)
+  }
+
+  return (
+    <div className={`group relative ${className}`}>
+      <video
+        ref={videoRef}
+        className="h-full w-full object-cover"
+        src={src}
+        playsInline
+        preload="metadata"
+        poster={poster}
+      />
+
+      {/* Overlay escuro sutil quando pausado */}
+      {!isPlaying && (
+        <div className="pointer-events-none absolute inset-0 bg-black/10" />
+      )}
+
+      {/* Botão principal central */}
+      {!isPlaying && (
+        <button
+          type="button"
+          onClick={togglePlay}
+          aria-label="Reproduzir vídeo"
+          className="absolute inset-0 flex items-center justify-center"
+        >
+          <span className="flex h-18 w-18 items-center justify-center rounded-full border border-white/10 bg-background/80 shadow-2xl backdrop-blur-md transition-transform duration-300 group-hover:scale-105">
+            <Play className="ml-1 h-8 w-8 fill-primary text-primary" />
+          </span>
+        </button>
+      )}
+
+      {/* Controls customizados no canto inferior direito */}
+      <div className="absolute bottom-4 right-4 flex items-center gap-2">
+        <button
+          type="button"
+          onClick={toggleMute}
+          aria-label={isMuted ? "Ativar som" : "Silenciar vídeo"}
+          className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-background/75 text-foreground shadow-lg backdrop-blur-md transition hover:scale-105"
+        >
+          {isMuted ? (
+            <VolumeX className="h-5 w-5" />
+          ) : (
+            <Volume2 className="h-5 w-5" />
+          )}
+        </button>
+
+        <button
+          type="button"
+          onClick={togglePlay}
+          aria-label={isPlaying ? "Pausar vídeo" : "Reproduzir vídeo"}
+          className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-background/75 text-foreground shadow-lg backdrop-blur-md transition hover:scale-105"
+        >
+          {isPlaying ? (
+            <Pause className="h-5 w-5 fill-primary text-primary" />
+          ) : (
+            <Play className="ml-0.5 h-5 w-5 fill-primary text-primary" />
+          )}
+        </button>
+      </div>
+    </div>
+  )
+}
 
 export function HeroSection() {
   return (
@@ -53,16 +182,12 @@ export function HeroSection() {
             {/* VSL mobile */}
             <div className="mt-8 md:hidden">
               <div className="overflow-hidden rounded-[28px] border border-white/10 bg-black/30 shadow-2xl backdrop-blur-sm">
-                <div className="relative aspect-[1/1] w-full">
-                  <video
-                    className="h-full w-full object-cover"
-                    src="/videos/vsl-mobile.mp4"
-                    controls
-                    playsInline
-                    preload="metadata"
-                    poster="/images/vsl-poster-mobile.jpg"
-                  />
-                </div>
+                <CustomVideoPlayer
+                  src="/videos/vsl-mobile.mp4"
+                  poster="/images/vsl-poster-mobile.jpg"
+                  className="aspect-[1/1] w-full"
+                  mutedByDefault={false}
+                />
               </div>
             </div>
 
@@ -76,25 +201,17 @@ export function HeroSection() {
                 <a href="#cadastro">Quero ser revendedora</a>
               </Button>
             </div>
-
-            <p className="mt-4 text-sm text-card/70">
-              Cadastro rápido e sem compromisso.
-            </p>
           </div>
 
           {/* Coluna direita - VSL desktop */}
           <div id="video" className="relative hidden md:flex justify-center">
             <div className="w-[92%] overflow-hidden rounded-[32px] border border-white/10 bg-black/30 shadow-2xl backdrop-blur-sm">
-              <div className="relative aspect-[1/1] w-full">
-                <video
-                  className="h-full w-full object-cover"
-                  src="/videos/vsl-desktop.mp4"
-                  controls
-                  playsInline
-                  preload="metadata"
-                  poster="/images/vsl-poster.jpg"
-                />
-              </div>
+              <CustomVideoPlayer
+                src="/videos/vsl-desktop.mp4"
+                poster="/images/vsl-poster.jpg"
+                className="aspect-[1/1] w-full"
+                mutedByDefault={false}
+              />
             </div>
 
             {/* Card flutuante */}
