@@ -1,11 +1,11 @@
 "use client"
 
-import { useTheme } from "next-themes"
 import Image from "next/image"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { useTheme } from "next-themes"
 
 const navLinks = [
   { label: "Beneficios", href: "#beneficios" },
@@ -17,10 +17,12 @@ const navLinks = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
   const { resolvedTheme } = useTheme()
-const [mounted, setMounted] = useState(false)
 
-useEffect(() => setMounted(true), [])
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
@@ -28,30 +30,18 @@ useEffect(() => setMounted(true), [])
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const isDark = mounted && resolvedTheme === "dark"
+  if (!mounted) return null
 
-// Quando NÃO está scrolled:
-// - light theme: texto claro (branco) sobre o hero
-// - dark theme: texto escuro (preto) sobre o hero (como você pediu)
-const topLinkClass = isDark
-  ? "text-black/90 hover:text-black"
-  : "text-white/90 hover:text-white"
+  const isDark = resolvedTheme === "dark"
 
-const topBrandClass = isDark ? "text-black" : "text-white"
-
-const desktopLinkClass = scrolled
-  ? "text-foreground hover:text-foreground"
-  : topLinkClass
-
-const brandTextClass = scrolled ? "text-foreground" : topBrandClass
-
-const mobileTopControlsClass = scrolled ? "text-foreground" : topBrandClass
+  const navTextClass = isDark ? "text-white" : "text-black"
+  const navHoverClass = isDark ? "hover:text-white/80" : "hover:text-black/80"
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-background/95 backdrop-blur-md shadow-sm border-b border-border"
+          ? "bg-background/95 -b backdrop-blur-md shadow-sm"
           : "bg-transparent"
       }`}
     >
@@ -67,19 +57,18 @@ const mobileTopControlsClass = scrolled ? "text-foreground" : topBrandClass
           />
           <span
             style={{ fontFamily: "var(--font-brand)" }}
-            className={`text-lg font-semibold tracking-wide ${brandTextClass}`}
+            className={`text-lg font-semibold tracking-wide ${navTextClass}`}
           >
             Paiva Morais
           </span>
         </a>
 
-        {/* Desktop nav */}
         <div className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className={`text-sm font-medium transition-colors ${desktopLinkClass}`}
+              className={`text-sm font-medium transition-colors ${navTextClass} ${navHoverClass}`}
             >
               {link.label}
             </a>
@@ -87,7 +76,7 @@ const mobileTopControlsClass = scrolled ? "text-foreground" : topBrandClass
 
           <Button
             asChild
-            className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-6"
+            className="rounded-full bg-primary px-6 text-primary-foreground hover:bg-primary/90"
           >
             <a href="#cadastro">Quero ser revendedora</a>
           </Button>
@@ -95,28 +84,30 @@ const mobileTopControlsClass = scrolled ? "text-foreground" : topBrandClass
           <ThemeToggle />
         </div>
 
-        {/* Mobile controls: theme toggle + hamburger */}
         <div className="flex items-center gap-2 md:hidden">
           <ThemeToggle />
           <button
-            className={mobileTopControlsClass}
+            className={navTextClass}
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label={mobileOpen ? "Fechar menu" : "Abrir menu"}
           >
-            {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {mobileOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
           </button>
         </div>
       </nav>
 
-      {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-background/95 backdrop-blur-md border-b border-border px-6 pb-6">
+        <div className="border-b border-border bg-background/95 px-6 pb-6 backdrop-blur-md md:hidden">
           <div className="flex flex-col gap-4">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-base font-medium text-muted-foreground transition-colors hover:text-foreground py-2"
+                className="py-2 text-base font-medium text-muted-foreground transition-colors hover:text-foreground"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}
@@ -124,7 +115,7 @@ const mobileTopControlsClass = scrolled ? "text-foreground" : topBrandClass
             ))}
             <Button
               asChild
-              className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full w-full"
+              className="w-full rounded-full bg-primary text-primary-foreground hover:bg-primary/90"
             >
               <a href="#cadastro" onClick={() => setMobileOpen(false)}>
                 Quero ser revendedora
