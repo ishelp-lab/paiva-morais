@@ -148,7 +148,7 @@ export function HeroSection() {
           priority
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-foreground/70" />
+        <div className="absolute inset-0 bg-background/70" />
       </div>
 
       {/* Glow */}
@@ -167,8 +167,7 @@ export function HeroSection() {
             </span>
 
             <h1
-              className="bg-clip-text font-serif text-3xl font-bold leading-tight tracking-tight text-balance text-transparent sm:text-4xl md:text-5xl lg:text-6xl"
-              style={{ backgroundImage: "url('/images/jewerly-text.jpg')" }}
+              className="bg-clip-text font-serif text-3xl font-bold leading-tight tracking-tight text-balance text-card sm:text-4xl md:text-5xl lg:text-6xl"
             >
               Ganhe dinheiro revendendo semijoias de alta qualidade
             </h1>

@@ -106,7 +106,7 @@ export function HowItWorksSection() {
                 return (
                   <div
                     key={step.title}
-                    className="group rounded-2xl border border-border/60 bg-card p-5 shadow-sm transition-transform duration-300 hover:-translate-y-0.5"
+                    className="group rounded-2xl border border-border/60 bg-card-foreground p-5 shadow-sm transition-transform duration-300 hover:-translate-y-0.5"
                   >
                     <div className="flex items-start gap-4">
                       <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary/10">
@@ -140,7 +140,7 @@ export function HowItWorksSection() {
         <div className="mt-20 grid gap-6 lg:grid-cols-2">
 
           {/* para quem é */}
-          <div className="relative overflow-hidden rounded-[28px] border border-border/60 bg-muted/40 p-7 shadow-sm">
+          <div className="relative overflow-hidden rounded-[28px] border border-border/60 bg-transparent/40 p-7 shadow-sm">
             <div className="absolute right-0 top-0 h-32 w-32 rounded-full bg-primary/10 blur-3xl" />
 
             <div className="relative">
@@ -158,7 +158,7 @@ export function HowItWorksSection() {
                 {audienceItems.map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <CheckCircle2 className="mt-0.5 h-4 w-4 text-primary" />
-                    <span className="text-sm leading-relaxed text-muted-foreground md:text-base">
+                    <span className="text-sm leading-relaxed text-muted-background md:text-base">
                       {item}
                     </span>
                   </li>

@@ -40,7 +40,7 @@ export function ProofAndCTASection() {
             Uma oportunidade bonita de apresentar e simples de começar
           </h2>
 
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-muted-background md:text-lg">
             Veja a apresentação das peças, entenda o valor percebido do produto
             e deixe seu cadastro para falar com nossa equipe.
           </p>
