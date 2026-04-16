@@ -25,7 +25,7 @@ export function ProofAndCTASection() {
   return (
     <section
       id="cadastro"
-      className="relative overflow-hidden bg-muted/30 py-20 md:py-28"
+      className="relative overflow-hidden bg-muted py-20 md:py-28"
     >
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute left-0 top-0 h-56 w-56 rounded-full bg-primary/10 blur-3xl" />

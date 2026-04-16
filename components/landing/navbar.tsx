@@ -80,12 +80,9 @@ export function Navbar() {
           >
             <a href="#cadastro">Quero ser revendedora</a>
           </Button>
-
-          <ThemeToggle />
         </div>
 
         <div className="flex items-center gap-2 md:hidden">
-          <ThemeToggle />
           <button
             className={navTextClass}
             onClick={() => setMobileOpen(!mobileOpen)}

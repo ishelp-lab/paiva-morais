@@ -98,7 +98,7 @@ export function HowItWorksSection() {
           </div>
 
           {/* conteúdo */}
-          <div className="lg:pl-6">
+          <div className="lg:pl-6 lg:sticky lg:top-24 h-fit">
             <div className="space-y-4">
               {steps.map((step, index) => {
                 const Icon = step.icon
@@ -134,10 +134,7 @@ export function HowItWorksSection() {
               })}
             </div>
           </div>
-        </div>
-
-        {/* bloco inferior */}
-        <div className="mt-20 grid gap-6 lg:grid-cols-2">
+          <div className="mt-20 grid gap-6 lg:grid-cols-1">
 
           {/* para quem é */}
           <div className="relative overflow-hidden rounded-[28px] border border-border/60 bg-transparent/40 p-7 shadow-sm">
@@ -173,6 +170,7 @@ export function HowItWorksSection() {
               </div>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </section>
