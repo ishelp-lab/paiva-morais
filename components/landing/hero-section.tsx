@@ -197,7 +197,7 @@ export function HeroSection() {
                 size="lg"
                 className="rounded-full bg-primary px-8 py-6 text-base font-semibold text-primary-foreground shadow-lg shadow-primary/20 hover:bg-primary/90"
               >
-                <a href="#cadastro">Quero ser revendedora</a>
+                <a href="https://paivamorais.semijoias.net/querorevender">Quero ser revendedora</a>
               </Button>
             </div>
           </div>
@@ -207,7 +207,7 @@ export function HeroSection() {
             <div className="w-[92%] overflow-hidden rounded-[32px] border border-white/10 bg-black/30 shadow-2xl backdrop-blur-sm">
               <CustomVideoPlayer
                 src="/videos/vsl-desktop.mp4"
-                poster="/images/vsl-poster.jpg"
+                poster="/images/vsl-poster.jpeg"
                 className="aspect-[1/1] w-full"
                 mutedByDefault={false}
               />
