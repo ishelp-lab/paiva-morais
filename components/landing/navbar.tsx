@@ -80,6 +80,7 @@ export function Navbar() {
           >
             <a href="https://paivamorais.semijoias.net/querorevender">Quero ser revendedora</a>
           </Button>
+          <ThemeToggle />
         </div>
 
         <div className="flex items-center gap-2 md:hidden">
