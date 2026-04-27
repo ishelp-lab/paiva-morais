@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next"
 import { Inter, Playfair_Display, Cinzel } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { ThemeProvider } from "@/components/theme-provider"
+import { CookieBanner } from "@/components/cookie-banner"
 import "./globals.css"
 
 const _brand = Cinzel({
@@ -48,6 +49,7 @@ export default function RootLayout({
       <body className={`${_inter.variable} ${_playfair.variable} ${_brand.variable}`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           {children}
+          <CookieBanner />
         </ThemeProvider>
         <Analytics />
       </body>
