@@ -183,7 +183,7 @@ export function HeroSection() {
               <div className="overflow-hidden rounded-[28px] border border-white/10 bg-black/30 shadow-2xl backdrop-blur-sm">
                 <CustomVideoPlayer
                   src="/videos/vsl-mobile.mp4"
-                  poster="/images/vsl-poster-mobile.jpg"
+                  poster="/images/vsl-poster.jpeg"
                   className="aspect-[1/1] w-full"
                   mutedByDefault={false}
                 />

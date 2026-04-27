@@ -56,7 +56,7 @@
   --secondary: #F5F0EB;
   --secondary-foreground: #1A1A1A;
   --muted: #333333;
-  --muted-foreground: #464646;
+  --muted-foreground: #a8a8a8;
   --accent: #1A1A1A;
   --accent-foreground: #FFFFFF;
   --destructive: #DC2626;
@@ -126,6 +126,7 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
