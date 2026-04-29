@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { CheckCircle2, Package, DollarSign, Sparkles, UserCheck } from "lucide-react"
+import { CheckCircle2, Package, DollarSign, Instagram, UserCheck } from "lucide-react"
 
 const steps = [
   {
@@ -78,23 +78,25 @@ export function HowItWorksSection() {
               </div>
             </div>
 
-            {/* card flutuante */}
-            <div className="absolute -bottom-6 left-4 right-4 rounded-2xl border border-border/60 bg-background/95 p-4 shadow-lg backdrop-blur md:left-8 md:right-auto md:max-w-xs">
-              <div className="flex items-start gap-3">
-                <div className="rounded-full bg-primary/10 p-2">
-                  <Sparkles className="h-5 w-5 text-primary" />
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-foreground">
-                    Comece sem estoque próprio
-                  </p>
-                  <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-                    Um modelo mais leve para iniciar, com menos barreira e mais
-                    segurança.
-                  </p>
-                </div>
+            {/* card flutuante - Link Instagram */}
+            <a 
+              href="https://www.instagram.com/paivamorais_semijoias/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="absolute -bottom-6 left-4 right-4 flex items-center gap-3 rounded-2xl border border-border/60 bg-background/95 p-4 shadow-lg backdrop-blur transition-all hover:-translate-y-1 hover:shadow-xl md:left-8 md:right-auto md:max-w-xs group cursor-pointer"
+            >
+              <div className="rounded-full bg-primary/10 p-2 transition-colors group-hover:bg-primary/20">
+                <Instagram className="h-5 w-5 text-primary" />
               </div>
-            </div>
+              <div>
+                <p className="text-sm font-semibold text-foreground transition-colors group-hover:text-primary">
+                  Siga no Instagram
+                </p>
+                <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                  Acompanhe novidades, coleções e dicas exclusivas.
+                </p>
+              </div>
+            </a>
           </div>
 
           {/* conteúdo */}

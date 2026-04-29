@@ -27,11 +27,11 @@ export const metadata: Metadata = {
   generator: "Fhelipe Abel",
 
   icons: {
-  icon: [
-    { url: "/favicon-light.ico", media: "(prefers-color-scheme: light)" },
-    { url: "/favicon-dark.ico", media: "(prefers-color-scheme: dark)" },
-  ],
-},
+    icon: [
+      { url: "/favicon-light.ico", media: "(prefers-color-scheme: light)" },
+      { url: "/favicon-dark.ico", media: "(prefers-color-scheme: dark)" },
+    ],
+  },
 }
 
 export const viewport: Viewport = {

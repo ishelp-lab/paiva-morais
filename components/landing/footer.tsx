@@ -1,5 +1,6 @@
 import { Instagram, ShoppingBag } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -9,11 +10,23 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6">
         {/* Topo do footer */}
         <div className="flex flex-col items-center gap-6 md:flex-row md:justify-between">
-          <div className="text-center md:text-left">
-            <span className="font-serif text-xl font-bold text-foreground">
-              Paiva Morais
-            </span>
-            <p className="mt-1 text-sm text-muted-foreground">
+          <div className="flex flex-col items-center gap-3 md:items-start md:text-left">
+            <Link href="/" className="flex items-center gap-3">
+              <Image
+                src="/logo-paiva-morais.png"
+                alt="Paiva Morais Semijoias"
+                width={160}
+                height={40}
+                className="h-11 w-auto"
+              />
+              <span
+                style={{ fontFamily: "var(--font-brand)" }}
+                className="text-lg font-semibold tracking-wide text-foreground"
+              >
+                Paiva Morais
+              </span>
+            </Link>
+            <p className="text-sm text-muted-foreground">
               Semijoias de alta qualidade
             </p>
           </div>
