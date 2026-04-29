@@ -21,10 +21,27 @@ const _playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://paivamorais.semijoias.net"),
   title: "Revendedora | Paiva Morais",
   description:
     "Ganhe dinheiro revendendo semijoias Paiva Morais. Sem investimento inicial, com suporte completo e lucro garantido. Cadastre-se agora!",
   generator: "Fhelipe Abel",
+  openGraph: {
+    title: "Revenda Semijoias | Paiva Morais",
+    description: "Comece a revender semijoias sem investir nada. Receba as peças em consignação, tenha lucro garantido e suporte exclusivo.",
+    url: "https://paivamorais.semijoias.net",
+    siteName: "Paiva Morais",
+    images: [
+      {
+        url: "/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Oportunidade de Revenda Paiva Morais Semijoias",
+      },
+    ],
+    locale: "pt_BR",
+    type: "website",
+  },
 
   icons: {
     icon: [
