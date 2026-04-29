@@ -151,10 +151,10 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-background/70" />
       </div>
 
-      {/* Glow */}
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-0 top-0 h-56 w-56 rounded-full bg-primary/10 blur-3xl" />
-        <div className="absolute bottom-0 right-0 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
+      {/* Glow animado e iluminação melhorada */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute -left-20 -top-20 h-96 w-96 animate-pulse rounded-full bg-primary/20 blur-[100px]" style={{ animationDuration: '4s' }} />
+        <div className="absolute bottom-0 right-0 h-[30rem] w-[30rem] animate-pulse rounded-full bg-primary/20 blur-[120px]" style={{ animationDuration: '5s', animationDelay: '2s' }} />
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-24 md:py-28">
@@ -179,12 +179,12 @@ export function HeroSection() {
             </p>
 
             {/* VSL mobile */}
-            <div className="mt-8 md:hidden">
-              <div className="overflow-hidden rounded-[28px] border border-white/10 bg-black/30 shadow-2xl backdrop-blur-sm">
+            <div className="mt-8 flex justify-center md:hidden">
+              <div className="w-full max-w-[340px] overflow-hidden rounded-[32px] border border-white/10 bg-black/30 shadow-2xl backdrop-blur-sm">
                 <CustomVideoPlayer
                   src="/videos/vsl-mobile.mp4"
                   poster="/images/vsl-poster.jpeg"
-                  className="aspect-[1/1] w-full"
+                  className="aspect-[9/16] w-full"
                   mutedByDefault={false}
                 />
               </div>
@@ -204,11 +204,11 @@ export function HeroSection() {
 
           {/* Coluna direita - VSL desktop */}
           <div id="video" className="relative hidden md:flex justify-center">
-            <div className="w-[92%] overflow-hidden rounded-[32px] border border-white/10 bg-black/30 shadow-2xl backdrop-blur-sm">
+            <div className="w-full max-w-[340px] lg:max-w-[380px] overflow-hidden rounded-[32px] border border-white/10 bg-black/30 shadow-2xl backdrop-blur-sm">
               <CustomVideoPlayer
                 src="/videos/vsl-desktop.mp4"
                 poster="/images/vsl-poster.jpeg"
-                className="aspect-[1/1] w-full"
+                className="aspect-[9/16] w-full"
                 mutedByDefault={false}
               />
             </div>

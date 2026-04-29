@@ -43,40 +43,39 @@
 }
 
 .dark {
-  --background: #1A1A1A;
-  --foreground: #FAF8F5;
-  --background: #1A1A1A;
-  --card: #FFFFFF;
-  --card2: #262626;
-  --card-foreground: #1A1A1A;
-  --popover: #FFFFFF;
-  --popover-foreground: #1A1A1A;
+  --background: #09090b; /* Zinc 950 - fundo mais moderno e profundo */
+  --foreground: #fafafa;
+  --card: #ffffff; /* Mantido conforme uso em componentes para textos */
+  --card2: #18181b; /* Zinc 900 - containers sutis */
+  --card-foreground: #09090b;
+  --popover: #18181b;
+  --popover-foreground: #fafafa;
   --primary: #08BBB7;
-  --primary-foreground: #FFFFFF;
-  --secondary: #F5F0EB;
-  --secondary-foreground: #1A1A1A;
-  --muted: #333333;
-  --muted-foreground: #a8a8a8;
-  --accent: #1A1A1A;
-  --accent-foreground: #FFFFFF;
-  --destructive: #DC2626;
-  --destructive-foreground: #DC2626;
-  --border: #333333;
-  --input: #E8E0D6;
+  --primary-foreground: #ffffff;
+  --secondary: #27272a; /* Zinc 800 */
+  --secondary-foreground: #fafafa;
+  --muted: #18181b; /* Fundos secundários mais elegantes */
+  --muted-foreground: #a1a1aa; /* Textos secundários mais suaves (Zinc 400) */
+  --accent: #27272a;
+  --accent-foreground: #fafafa;
+  --destructive: #ef4444;
+  --destructive-foreground: #fafafa;
+  --border: #27272a; /* Bordas mais sutis */
+  --input: #27272a;
   --ring: #08BBB7;
   --chart-1: #08BBB7;
-  --chart-2: #1A1A1A;
-  --chart-3: #6B6B6B;
-  --chart-4: #E8E0D6;
-  --chart-5: #F5F0EB;
+  --chart-2: #18181b;
+  --chart-3: #52525b;
+  --chart-4: #27272a;
+  --chart-5: #3f3f46;
   --radius: 0.75rem;
-  --sidebar: #FAF8F5;
-  --sidebar-foreground: #1A1A1A;
+  --sidebar: #fafafa;
+  --sidebar-foreground: #09090b;
   --sidebar-primary: #08BBB7;
-  --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #F5F0EB;
-  --sidebar-accent-foreground: #1A1A1A;
-  --sidebar-border: #E8E0D6;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #27272a;
+  --sidebar-accent-foreground: #09090b;
+  --sidebar-border: #27272a;
   --sidebar-ring: #08BBB7;
 }
 

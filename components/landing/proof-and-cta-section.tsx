@@ -111,9 +111,9 @@ function DominoRotatingImage({
 export function ProofAndCTASection() {
   return (
     <section id="cadastro" className="relative bg-muted py-20 md:py-28">
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-0 top-0 h-56 w-56 rounded-full bg-primary/10 blur-3xl" />
-        <div className="absolute bottom-0 right-0 h-72 w-72 rounded-full bg-primary/8 blur-3xl" />
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute -left-10 -top-10 h-80 w-80 animate-pulse rounded-full bg-primary/15 blur-[100px]" style={{ animationDuration: '6s' }} />
+        <div className="absolute bottom-0 right-0 h-96 w-96 animate-pulse rounded-full bg-primary/15 blur-[100px]" style={{ animationDuration: '4s', animationDelay: '1s' }} />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-6">
