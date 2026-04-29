@@ -65,7 +65,7 @@ function DominoRotatingImage({
         }, 700)
       }, 5000)
 
-      ;(window as any)[`__domino_interval_${alt}`] = interval
+        ; (window as any)[`__domino_interval_${alt}`] = interval
     }, delay)
 
     return () => {
@@ -79,9 +79,8 @@ function DominoRotatingImage({
     <div className={`relative w-full overflow-hidden ${aspectClass}`}>
       {previousIndex !== null && (
         <div
-          className={`absolute inset-0 z-10 transition-transform duration-700 ease-in-out ${
-            isAnimating ? "translate-x-full" : "translate-x-0"
-          }`}
+          className={`absolute inset-0 z-10 transition-transform duration-700 ease-in-out ${isAnimating ? "translate-x-full" : "translate-x-0"
+            }`}
         >
           <Image
             src={images[previousIndex]}
@@ -93,9 +92,8 @@ function DominoRotatingImage({
       )}
 
       <div
-        className={`absolute inset-0 transition-transform duration-700 ease-in-out ${
-          isAnimating ? "translate-x-0" : previousIndex !== null ? "-translate-x-full" : "translate-x-0"
-        }`}
+        className={`absolute inset-0 transition-transform duration-700 ease-in-out ${isAnimating ? "translate-x-0" : previousIndex !== null ? "-translate-x-full" : "translate-x-0"
+          }`}
       >
         <Image
           src={images[currentIndex]}
@@ -204,7 +202,7 @@ export function ProofAndCTASection() {
                   asChild
                   className="w-full rounded-full py-6 text-base font-semibold"
                 >
-                  <a href="#cadastro">Quero começar agora</a>
+                  <a href="https://paivamorais.semijoias.net/querorevender">Quero começar agora</a>
                 </Button>
               </div>
 
