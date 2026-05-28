@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next"
+import Script from "next/script"
 import { Inter, Playfair_Display, Cinzel } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -69,13 +70,19 @@ export default function RootLayout({
           <CookieBanner />
         </ThemeProvider>
         <Analytics />
-        <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
+        <Script
+  id="microsoft-clarity"
+  strategy="afterInteractive"
+  dangerouslySetInnerHTML={{
+    __html: `
+      (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "wy9dka9c73");
-</script>
+      })(window, document, "clarity", "script", "wy9dka9c73");
+    `,
+  }}
+/>
       </body>
     </html>
   )
