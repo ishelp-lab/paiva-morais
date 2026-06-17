@@ -202,7 +202,7 @@ export function ProofAndCTASection() {
                   asChild
                   className="w-full rounded-full py-6 text-base font-semibold"
                 >
-                  <a href="https://paivamorais.semijoias.net/querorevender">Quero começar agora</a>
+                  <a href="https://wa.me/5534999391413?text=Ol%C3%A1!%20Quero%20ser%20revendedor(a)%20de%20semijoias%20e%20gostaria%20de%20falar%20com%20a%20Paiva%20Morais.">Quero começar agora</a>
                 </Button>
               </div>
 
