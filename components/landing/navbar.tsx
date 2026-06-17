@@ -78,7 +78,7 @@ export function Navbar() {
             asChild
             className="rounded-full bg-primary px-6 text-primary-foreground hover:bg-primary/90"
           >
-            <a href="https://paivamorais.semijoias.net/querorevender">Quero ser revendedora</a>
+            <a href="https://wa.me/5534999391413?text=Ol%C3%A1!%20Quero%20ser%20revendedor(a)%20de%20semijoias%20e%20gostaria%20de%20falar%20com%20a%20Paiva%20Morais.">Quero ser revendedora</a>
           </Button>
           <ThemeToggle />
         </div>
